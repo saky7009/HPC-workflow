@@ -1,0 +1,92 @@
+Pipline.....
+
+
+1) Doarado Call.bam...................................
+
+/gpfs1/home/m/m/mmolla/dorado-0.6.0-linux-x64/bin/dorado basecaller hac,5mCG_5hmCG /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A > /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/calls.bam
+
+2) Doarado duplex.bam.................................(Duplex basecalling can be performed with modified base detection, producing hemi-methylation calls for duplex reads:)
+
+/gpfs1/home/m/m/mmolla/dorado-0.6.0-linux-x64/bin/dorado duplex hac,5mCG_5hmCG /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A > /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex.bam
+
+3)Duplex aligned. bam .......................................
+/gpfs1/home/m/m/mmolla/dorado-0.6.0-linux-x64/bin/dorado aligner /gpfs2/scratch/mmolla/Z/HL4.fsa /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex.bam > /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_aligned.bam
+
+4) Duplex sorted.bam ..........................................
+
+samtools sort /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_aligned.bam > /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_sorted.bam
+
+5) smart tools idexing .........................................
+
+samtools index /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_sorted.bam
+
+6) Modkitpileup.bed..............................................
+
+modkit pileup /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_sorted.bam  /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_pileup.bed --log-filepath pileup.log
+
+7) bed graph.....................................................
+
+modkit pileup /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_sorted.bam  /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/graph_duplex_pileup.bed --bedgraph
+
+8) output to CpG dinucleotides...............
+
+modkit pileup /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_sorted.bam /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/CpG_duplex_pileup.bed  --cpg --ref /gpfs2/scratch/mmolla/Z/HL4.fsa
+
+9) Making a motif BED file...................................................................................................................
+
+modkit motif-bed /gpfs2/scratch/mmolla/Z/HL4.fsa CG 0 1> /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/cg_modifs.bed
+
+10) Extract only sites aligned to a CG motif....................................
+
+modkit motif-bed /gpfs2/scratch/mmolla/Z/HL4.fsa CG 0 > /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/0_cg_modifs.bed
+
+
+modkit extract /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_sorted.bam /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/out.tsv --ref /gpfs2/scratch/mmolla/Z/HL4.fsa --include-bed cg_modifs.bed
+
+11) Make hemi-methylation bedMethyl tables with pileup-hemi...........................................................
+
+modkit pileup-hemi /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_sorted.bam  --cpg --ref /gpfs2/scratch/mmolla/Z/HL4.fsa -o /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/hemi_pileup.bed  --log modkit.log
+
+12) DMR................................................
+ls
+cd htslib-1.20
+ls bgzip
+./bgzip -k /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_pileup.bed
+
+
+ls
+cd htslib-1.20
+ls tabix
+
+./tabix -p bed /gpfs2/scratch/mmolla/Longread_1/SP3/SP3_A_output/duplex_pileup.bed.gz
+
+
+
+
+
+
+modkit extract /gpfs2/scratch/mmolla/Emily/HC2N_MOD_Call/HC2N_aligned_sorted_filtered.bam  /gpfs2/scratch/mmolla/Longread_1/SP2/SP2_A/output/HC2N_aligned_sorted_filtered.tsv --ref /gpfs2/scratch/mmolla/Z/HL4RefGen_masked_assembly_HL4.scaffolds.fa
+
+
+
+
+modkit extract /gpfs2/scratch/mmolla/Emily/HC2T/MODCALL/HC2T_aligned_sorted_filtered.bam  /gpfs2/scratch/mmolla/Longread_1/SP2/SP2_A/output/HC2N_aligned_sorted_filtered.tsv --ref /gpfs2/scratch/mmolla/Z/HL4RefGen_masked_assembly_HL4.scaffolds.fa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
