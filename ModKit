@@ -1,0 +1,532 @@
+Software install 
+Wget
+tar -xvf v2.3.2.tar.gz.3  
+cd htslib-1.20
+
+
+
+
+make
+make check
+sudo make install
+
+For Uni base system .....
+cd/mnt/d/Bam
+mnt/d/bam
+ls calls.bam
+
+
+
+
+dorado basecaller dna_r10.4.1_e8.2_400bps_hac@v4.3.0 /gpfs2/scratch/mmolla/Pod*.pod5 --modified-bases-model [path_to_modified_bases_model] > /gpfs2/scratch/mmolla/HL3/calls.bam
+
+
+
+dorado aligner samtools index mnt/d/bam/calls.bam > mnt/d/bam/aligned.bam
+
+
+(base) [mmolla@vacc-user2 LB1]$ conda activate busco
+(busco) [mmolla@vacc-user2 LB1]$ cd ~
+(busco) [mmolla@vacc-user2 ~]$ mkdir scratch/LB1/out
+mkdir: cannot create directory ‘scratch/LB1/out’: File exists
+(busco) [mmolla@vacc-user2 ~]$ sbusco -i scratch/LB1/LB1_nanopore_raw.fasta -l eukaryota_odb10 -o scratch/LB1/out -m genome -f
+
+
+
+
+C:\Users\habib>scp \Users\habib\Desktop\habib\SP3_nanopore_raw.fastq.gz mmolla@vacc-user2.uvm.edu:/gpfs2/scratch/mmolla/Z/
+
+
+"D:\HL4-annotation result\HL4-annotation-03192024\HL4RefGen_masked_assembly_HL4.cds-transcripts.fa mmolla@vacc-user2.uvm.edu:/gpfs2/scratch/mmolla/Z/
+
+C:\habib>scp \habib\HL4_Ameiurus_nebulosus.geneco.csv mmolla@vacc-user2.uvm.edu:/gpfs2/scratch/mmolla/reference/
+
+
+
+
+
+/gpfs2/scratch/mmolla/Z/new
+
+scpsss
+comand for guppy
+
+wget https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy-cpu_3.0.3_linux64.tHL4ar.gz --no-check-certificate
+
+
+
+
+
+
+
+
+(base) [mmolla@node313 bin]$ cd ~
+(base) [mmolla@node313 ~]$ cd dorado-0.6.0-linux-x64/bin
+(base) [mmolla@node313 bin]$ ls
+dorado
+(base) [mmolla@node313 bin]$ ./dorado
+Usage: dorado [options] subcommand
+
+Positional arguments:
+aligner
+basecaller
+demux
+download
+duplex
+summary
+trim
+
+Optional arguments:
+-h --help               shows help message and exits
+-v --version            prints version information and exits
+-vv                     prints verbose version information and exits
+(base) [mmolla@node313 bin]$ dorado.exe basecaller hac D:\A\*.pod5s\ > D:\A\calls.bam
+bash: dorado.exe: command not found
+(base) [mmolla@node313 bin]$ ./dorado basecaller hac D:\A\*.pod5s\ > D:\A\calls.bam
+[2024-04-12 09:45:15.771] [info] Running: "basecaller" "hac" "D:A*.pod5s "
+[2024-04-12 09:45:15.842] [error] Failed to determine sequencing chemistry from data. Please select a model by path
+(base) [mmolla@node313 bin]$ ./dorado basecaller hac -m model_path D:\A\*.pod5s\ > D:\A\calls.bam
+[2024-04-12 09:46:13.365] [info] Running: 
+
+
+
+
+
+
+
+
+
+[2024-04-12 12:46:21.940] [info] Running: "basecaller" "dna_r10.4.1_e8.2_400bps_sup@v4.3.0" "gpfs2scratchmmollapod gpfs2scratchmmollaHL3calls.bam"
+[2024-04-12 12:46:22.013] [info] > Creating basecall pipeline
+[2024-04-12 12:46:22.023] [error] toml::parse: file open error -> dna_r10.4.1_e8.2_400bps_sup@v4.3.0/config.toml
+(base) [mmolla@node313 bin]$ dorado basecaller gpfs2\scratch\mmolla\pod\dna_r9.4.1_e8_hac@v3.3 pod5s --modified-bases-models  gpfs2\scratch\mmolla\HL3\calls.bam
+
+
+dorado basecaller hac,5mCG_5hmCG 5mC_5hmC 6mA \mnt\habib\pod5_pass\> calls.bam
+
+
+/gpfs2/scratch/mmolla/Pod/*.pod5
+
+
+ dorado basecaller /gpfs2/scratch/mmolla/Pod/*.pod5 dna_r10.4.1_e8.2_400bps_hac@vv4.2.0 --modified-bases-models > gpfs2\scratch\mmolla\HL3\calls.bam
+
+
+dorado basecaller /gpfs2/scratch/mmolla/Pod/*.pod5 dna_r10.4.1_e8.2_400bps_hac@v4.3.0 --modified-bases-models  > /gpfs2/scratch/mmolla/HL3/calls.bam
+
+dorado basecaller dna_r10.4.1_e8.2_400bps_hac@v4.3.0 /gpfs2/scratch/mmolla/Pod/.pod5/  --modified-bases 5mCG_5hmCG > /gpfs2/scratch/mmolla/HL3/calls.bam
+
+
+
+dorado basecaller dna_r10.4.1_e8.2_400bps_hac@v4.1.0 /gpfs2/scratch/mmolla/Pod/ > /gpfs2/scratch/mmolla/HL3/calls.bam
+
+
+
+dna_r10.4.1_e8.2_400bps_hac@v4.3.0
+
+
+dna_r10.4.1_e8.2_400bps_hac@v4.3.0
+
+
+
+$ module load singularity
+$ alias dorado='/gpfs1/sw/x86_64/rh7/pkgs/dorado/dorado-0.60.0.sif dorado'
+
+hac@dna_r10.4.1_e8.2_400bps_hac,5mCG_5hmCG@v1
+
+(fast|hac|sup)[@(version|latest)][,modification[@(version|latest)]][,...]
+
+.............................
+
+C:\Users\mmolla>D:\Software\dorado-0.6.0-win64\dorado-0.6.0-win64\bin\dorado.exe
+Usage: dorado [options] subcommand
+
+
+C:\Users\mmolla>cd D:\Software\dorado-0.6.0-win64\dorado-0.6.0-win64\bin
+
+
+C:\Users\mmolla>dir
+C:\Users\mmolla>echo %PATH%
+C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Users\mmolla\AppData\Local\Microsoft\WindowsApps;
+
+C:\Users\mmolla>set PATH=%PATH%;D:\Software\dorado-0.6.0-win64\dorado-0.6.0-win64\bin
+
+C:\Users\mmolla>echo %PATH%
+C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Users\mmolla\AppData\Local\Microsoft\WindowsApps;;D:\Software\dorado-0.6.0-win64\dorado-0.6.0-win64\bin
+
+C:\Users\mmolla>dorado basecaller dna_r10.4.1_e8.2_400bps_hac@v4.1.0 C:\habib\pod5_pass\*.pod5 > C:\habib\calls.bam
+[2024-04-16 13:47:19.483] [info] Running: "basecaller" "dna_r10.4.1_e8.2_400bps_hac@v4.1.0" "C:\habib\pod5_pass\*.pod5"
+[2024-04-16 13:47:19.580] [info] > Creating basecall pipeline
+[2024-04-16 13:47:19.580] [error] toml::parse: file open error -> dna_r10.4.1_e8.2_400bps_hac@v4.1.0\config.toml
+
+C:\Users\mmolla>dorado basecaller dna_r10.4.1_e8.2_400bps_hac@v4.3.0 C:\habib\pod5_pass\*.pod5 > C:\habib\calls.bam
+[2024-04-16 13:47:55.213] [info] Running: "basecaller" "dna_r10.4.1_e8.2_400bps_hac@v4.3.0" "C:\habib\pod5_pass\*.pod5"
+[2024-04-16 13:47:55.235] [info] > Creating basecall pipeline
+[2024-04-16 13:47:55.235] [error] toml::parse: file open error -> dna_r10.4.1_e8.2_400bps_hac@v4.3.0\config.toml
+
+C:\Users\mmolla>dorado basecaller dna_r10.4.1_e8.2_400bps_hac@v4.3.0 C:\habib\pod5_pass\*.pod5 > C:\habib\calls.bam
+[2024-04-16 13:48:52.859] [info] Running: "basecaller" "dna_r10.4.1_e8.2_400bps_hac@v4.3.0" "C:\habib\pod5_pass\*.pod5"
+[2024-04-16 13:48:52.887] [info] > Creating basecall pipeline
+[2024-04-16 13:48:52.887] [error] toml::parse: file open error -> dna_r10.4.1_e8.2_400bps_hac@v4.3.0\config.toml
+
+C:\Users\mmolla>dorado basecaller hac,5mCG_5hmCG C:\habib\pod5_pass\*.pod5 > C:\habib\calls.bam
+[2024-04-16 13:49:50.615] [info] Running: "basecaller" "hac,5mCG_5hmCG" "C:\habib\pod5_pass\*.pod5"
+[2024-04-16 13:49:50.645] [error] Failed to open file C:\habib\pod5_pass\*.pod5: IOError: Failed to open local file 'C:/habib/pod5_pass/*.pod5'. Detail: [Windows error 123] The filename, directory name, or volume label syntax is incorrect.
+
+[2024-04-16 13:49:50.645] [error] Failed to determine sequencing chemistry from data. Please select a model by path
+
+C:\Users\mmolla>dorado basecaller hac,5mCG_5hmCG C:\habib\pod5_pass\ > C:\habib\calls.bam
+[2024-04-16 13:50:26.107] [info] Running: "basecaller" "hac,5mCG_5hmCG" "C:\habib\pod5_pass\"
+[2024-04-16 13:50:42.097] [info]  - downloading dna_r10.4.1_e8.2_400bps_hac@v4.3.0 with httplib
+[2024-04-16 13:50:55.189] [info]  - downloading dna_r10.4.1_e8.2_400bps_hac@v4.3.0_5mCG_5hmCG@v1 with httplib
+[2024-04-16 13:52:19.819] [info] > Creating basecall pipeline
+[2024-04-16 13:53:01.036] [info] cuda:0 using chunk size 9996, batch size 2048
+[2024-04-16 13:53:02.256] [info] cuda:0 using chunk size 4998, batch size 2048
+[>                             ] 0% [17m:11s<17m:11s] Basecalling
+
+
+C:\Users\mmolla>dorado basecaller dna_r10.4.1_e8.2_400bps_hac@v4.3.0 C:\habib\pod5_pass\ > C:\habib\calls.bam
+
+Modkit
+$HOME/.cargo/bin
+ $HOME/.cargo.
+
+
+This is usually done by running one of the following (note the leading DOT):
+. "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdkshcdc
+source "$HOME/.cargo/env.fish"  # For fish
+
+
+
+./dorado basecaller hac,5mCG_5hmCG /gpfs2/scratch/mmolla/Pod/ > /gpfs2/scratch/mmolla/HL3/calls.bam
+
+
+./dorado basecaller hac,5mCG_5hmCG /habib/pod5_pass/*.pod5 > D:\D\calls.bam
+
+cd
+old orwww9805403
+
+
+
+
+base) [mmolla@dg-gpunode05 ~]$ cmake --version
+cmake version 3.28.3
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+(base) [mmolla@dg-gpunode05 ~]$ ls ~/cmake-3.29.2-linux-x86_64/bin
+ls: cannot access /users/m/m/mmolla/cmake-3.29.2-linux-x86_64/bin: No such file or directory
+(base) [mmolla@dg-gpunode05 ~]$ export PATH=~/cmake-3.29.2-linux-x86_64/bin:$PATH
+(base) [mmolla@dg-gpunode05 ~]$ cmake --version
+cmake version 3.28.3
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+(base) [mmolla@dg-gpunode05 ~]$ cargo install --git https://github.com/nanoporetech/modkit.git
+
+
+
+
+
+
+if you want to install something into home directory
+
+
+make prefix=$HOME/samtools install
+
+
+
+Alignment---
+(base) [mmolla@dg-gpunode05 ~]$ dorado aligner samtools /gpfs2/scratch/mmolla/Z/ --output-dir /gpfs2/scratch/mmolla/HL3/ >/gpfs2/scratch/mmolla/HL3/aligned.bam
+
+
+
+modkit pileup C:\Users\mmolla\OneDrive - University of Vermont\Desktop\out\A\ output\C:\Users\mmolla\OneDrive - University of Vermont\Desktop\out\A\pileup.bed --log-filepath pileup.log
+
+
+
+smarttools
+
+
+(base) [mmolla@dg-gpunode05 ~]$ samtools sort -n -@ 4 /gpfs2/scratch/mmolla/Z/calls.bam -o /gpfs2/scratch/mmolla/Z/sorted.bam
+
+samtools index /gpfs2/scratch/mmolla/Z/sorted.bam /gpfs2/scratch/mmolla/Z/index.bai
+
+samtools index /gpfs2/scratch/mmolla/Z/sorted.bam
+base) [mmolla@dg-gpunode05 ~]$ samtools idxstats /gpfs2/scratch/mmolla/Z/sorted.bam
+
+
+*       0       0       854685
+dorado aligner /gpfs2/scratch/mmolla/Z/HL4.fsa sorted.bam > aligned.bam
+
+
+(base) [mmolla@dg-gpunode05 Z]$ dorado aligner /gpfs2/scratch/mmolla/Z/HL4.fsa sorted.bam > aligned.bam
+[2024-04-18 17:53:07.232] [info] Running: "aligner" "/gpfs2/scratch/mmolla/Z/HL4.fsa" "sorted.bam"
+[2024-04-18 17:53:07.240] [info] num input files: 1
+[2024-04-18 17:53:07.240] [info] > loading index /gpfs2/scratch/mmolla/Z/HL4.fsa
+[2024-04-18 17:53:47.129] [info] processing sorted.bam -> -
+[2024-04-18 17:53:47.152] [info] > starting alignment
+[2024-04-18 17:59:02.438] [info] > Simplex reads basecalled: 844225
+[2024-04-18 17:59:02.438] [info] > finished alignment
+[2024-04-18 17:59:02.438] [info] > total/primary/unmapped 1235319/836933/17752
+(base) [mmolla@dg-gpunode05 Z]$
+
+
+samtools sort calls.bam > calls_sorted.bam
+samtools index calls_sorted.bam
+modkit pileup calls_sorted.bam pileup.bed
+
+19/4/2024 bedMethyl
+
+(base) [mmolla@dg-gpunode05 Z]$ dorado aligner sorted.bam  > aligned.bam
+
+[2024-04-18 17:40:00.077] [info] Running: "aligner" "sorted.bam"
+[2024-04-18 17:40:00.079] [info] num input files: 1
+(base) [mmolla@dg-gpunode05 Z]$ dorado aligner sorted.bam  > aligned.bam
+
+[2024-04-18 17:43:02.288] [info] Running: "aligner" "sorted.bam"
+[2024-04-18 17:43:02.291] [info] num input files: 1
+(base) [mmolla@dg-gpunode05 Z]$ dorado aligner sorted.bam  > aligned.bam
+[2024-04-18 17:44:25.251] [info] Running: "aligner" "sorted.bam"
+[2024-04-18 17:44:25.254] [info] num input files: 1
+(base) [mmolla@dg-gpunode05 Z]$ modkit pileup /gpfs2/scratch/mmolla/Z/ output/gpfs2/scratch/mmolla/Z/pileup.bed --log-filepath pileup.log
+
+> Error! unable to open SAM/BAM/CRAM file at /gpfs2/scratch/mmolla/Z/
+(base) [mmolla@dg-gpunode05 Z]$ modkit pileup /gpfs2/scratch/mmolla/Z/aligned.bam output/gpfs2/scratch/mmolla/Z/pileup.bed--log-filepath pileup.log
+> Error! unable to open SAM/BAM/CRAM file at /gpfs2/scratch/mmolla/Z/aligned.bam
+(base) [mmolla@dg-gpunode05 Z]$ dorado aligner sorted.bam  > aligned.bam[2024-04-18 17:50:00.503] [info] Running: "aligner" "sorted.bam"
+
+[2024-04-18 17:50:00.505] [info] num input files: 1
+(base) [mmolla@dg-gpunode05 Z]$  dorado aligner samtools sorted.bam  > aligned.bam
+
+[2024-04-18 17:50:59.188] [info] Running: "aligner" "samtools" "sorted.bam"
+[2024-04-18 17:50:59.195] [info] num input files: 1
+[2024-04-18 17:50:59.195] [info] > loading index samtools
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  AlignerNode reference path does not exist: samtools
+Aborted
+(base) [mmolla@dg-gpunode05 Z]$ dorado aligner /gpfs2/scratch/mmolla/Z/.fasta sorted.bam > aligned.bam
+
+[2024-04-18 17:52:23.454] [info] Running: "aligner" "/gpfs2/scratch/mmolla/Z/.fasta" "sorted.bam"
+[2024-04-18 17:52:23.462] [info] num input files: 1
+[2024-04-18 17:52:23.462] [info] > loading index /gpfs2/scratch/mmolla/Z/.fasta
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  AlignerNode reference path does not exist: /gpfs2/scratch/mmolla/Z/.fasta
+Aborted
+(base) [mmolla@dg-gpunode05 Z]$ dorado aligner /gpfs2/scratch/mmolla/Z/HL4.fsa sorted.bam > aligned.bam
+[2024-04-18 17:53:07.232] [info] Running: "aligner" "/gpfs2/scratch/mmolla/Z/HL4.fsa" "sorted.bam"
+[2024-04-18 17:53:07.240] [info] num input files: 1
+[2024-04-18 17:53:07.240] [info] > loading index /gpfs2/scratch/mmolla/Z/HL4.fsa
+[2024-04-18 17:53:47.129] [info] processing sorted.bam -> -
+[2024-04-18 17:53:47.152] [info] > starting alignment
+[2024-04-18 17:59:02.438] [info] > Simplex reads basecalled: 844225
+[2024-04-18 17:59:02.438] [info] > finished alignment
+[2024-04-18 17:59:02.438] [info] > total/primary/unmapped 1235319/836933/17752
+(base) [mmolla@dg-gpunode05 Z]$ modkit pileup /gpfs2/scratch/mmolla/Z/aligned.bam output/gpfs2/scratch/mmolla/Z/pileup.bed--log-filepath pileup.log
+> Error! unable to open SAM/BAM/CRAM index for /gpfs2/scratch/mmolla/Z/aligned.bam; please create an index
+(base) [mmolla@dg-gpunode05 Z]$ modkit pileup /gpfs2/scratch/mmolla/Z/sorted.bam output/gpfs2/scratch/mmolla/Z/pileup.bed --log-filepath pileup.log
+
+
+cd /gpfs2/scratch/mmolla/Z/
+samtools index sorted.bam
+modkit pileup sorted.bam pileup.bed --log-filepath pileup.log
+samtools view sorted.bam | head
+less sorted.bam
+samtools view -h sorted.bam -o sorted.sam
+less sorted.sam
+
+
+Dorado.............
+
+(base) [mmolla@dg-gpunode05 ~]$ find / -name dorado -type f 2>/dev/null
+/gpfs2/scratch/eguswa/methylation/dorado-0.6.0-linux-x64/bin/dorado
+/gpfs1/home/m/m/mmolla/dorado-0.6.0-linux-x64/bin/dorado
+/gpfs1/mbsr_tools/dorado-0.5.2-linux-x64/bin/dorado
+(base) [mmolla@dg-gpunode05 ~]$ /gpfs1/home/m/m/mmolla/dorado-0.6.0-linux-x64/bin/dorado basecaller hac,5mCG_5hmCG /gpfs2/scratch/mmolla/Pod/ > /gpfs2/scratch/mmolla/HL3/calls.bam
+[2024-04-19 12:25:17.153] [info] Running: "basecaller" "hac,5mCG_5hmCG" "/gpfs2/scratch/mmolla/Pod/"
+[2024-04-19 12:25:23.025] [info] > Creating basecall pipeline
+[2024-04-19 12:27:42.683] [info] cuda:0 using chunk size 10000, batch size 4672
+[2024-04-19 12:27:45.983] [info] cuda:0 using chunk size 5000, batch size 8448
+[2024-04-19 13:12:00.864] [info] > Simplex reads basecalled: 844225https://catalogue.uvm.edu/undergraduate/courses/courselist/
+[2024-04-19 13:12:00.864] [info] > Simplex reads filtered: 14
+[2024-04-19 13:12:00.864] [info] > Basecalled @ Samples/s: 1.257190e+07
+[2024-04-19 13:12:01.396] [info] > Finished
+(base) [mmolla@dg-gpunode05 ~]$ dorado summary /gpfs2/scratch/mmolla/HL3/calls.bam > summary.tsv
+bash: dorado: command not found
+(base) [mmolla@dg-gpunode05 ~]$ /gpfs1/home/m/m/mmolla/dorado-0.6.0-linux-x64/bin/dorado summary /gpfs2/scratch/mmolla/HL3/calls.bam > summary.tsv
+[2024-04-19 13:17:28.102] [info] Running: "summary" "/gpfs2/scratch/mmolla/HL3/calls.bam"
+(base) [mmolla@dg-gpunode05 ~]$ /gpfs1/home/m/m/mmolla/dorado-0.6.0-linux-x64/bin/dorado summary /gpfs2/scratch/mmolla/HL3/calls.bam > /gpfs2/scratch/mmolla/HL3/summary.tsv
+[2024-04-19 13:22:13.458] [info] Running: "summary" "/gpfs2/scratch/mmolla/HL3/calls.bam"
+(base) [mmolla@dg-gpunode05 ~]$ /gpfs1/home/m/m/mmolla/dorado-0.6.0-linux-x64/bin/dorado aligner samtools /gpfs2/scratch/mmolla/HL3/calls.bam  > /gpfs2/scratch/mmolla/HL3/aligned.bam
+[2024-04-19 13:29:38.227] [info] Running: "aligner" "samtools" "/gpfs2/scratch/mmolla/HL3/calls.bam"
+[2024-04-19 13:29:38.247] [info] num input files: 1
+[2024-04-19 13:29:38.248] [info] > loading index samtools
+[2024-04-19 13:29:38.261] [info] processing /gpfs2/scratch/mmolla/HL3/calls.bam -> -
+[2024-04-19 13:29:38.279] [info] > starting alignment
+[2024-04-19 13:31:50.234] [info] > Simplex reads basecalled: 844225
+[2024-04-19 13:31:50.234] [info] > finished alignment
+[2024-04-19 13:31:50.234] [info] > total/primary/unmapped 854685/0/854685
+(base) [mmolla@dg-gpunode05 ~]$
+(base) [mmolla@dg-gpunode05 ~]$ /gpfs1/home/m/m/mmolla/dorado-0.6.0-linux-x64/bin/dorado aligner /gpfs2/scratch/mmolla/Z/HL4.fsa /gpfs2/scratch/mmolla/HL3/calls.bam  > /gpfs2/scratch/mmolla/HL3/raligned.bam
+[2024-04-19 13:42:39.800] [info] Running: "aligner" "/gpfs2/scratch/mmolla/Z/HL4.fsa" "/gpfs2/scratch/mmolla/HL3/calls.bam"
+[2024-04-19 13:42:39.815] [info] num input files: 1
+[2024-04-19 13:42:39.815] [info] > loading index /gpfs2/scratch/mmolla/Z/HL4.fsa
+[2024-04-19 13:43:18.674] [info] processing /gpfs2/scratch/mmolla/HL3/calls.bam -> -
+[2024-04-19 13:43:18.695] [info] > starting alignment
+[2024-04-19 13:48:36.463] [info] > Simplex reads basecalled: 844225
+[2024-04-19 13:48:36.463] [info] > finished alignment
+[2024-04-19 13:48:36.463] [info] > total/primary/unmapped 1235319/836933/17752
+(base) [mmolla@dg-gpunode05 ~]$
+(base) [mmolla@dg-gpunode05 HL3]$ samtools sort /gpfs2/scratch/mmolla/HL3/calls.bam > /gpfs2/scratch/mmolla/HL3/calls_sorted.bam
+[bam_sort_core] merging from 6 files and 1 in-memory blocks...
+(base) [mmolla@dg-gpunode05 HL3]$ samtools index /gpfs2/scratch/mmolla/HL3/calls_sorted.bam(base) 
+[mmolla@dg-gpunode05 HL3]$
+
+(base) [mmolla@dg-gpunode05 HL3]$ modkit pileup /gpfs2/scratch/mmolla/HL3/calls_sorted.bam /gpfs2/scratch/mmolla/HL3/pileup.bed --log-filepath pileup.log
+> calculated chunk size: 6, interval size 100000, processing 600000 positions concurrently
+> attempting to sample 10042 reads
+> Error! zero reads found in bam index
+
+(base) [mmolla@dg-gpunode05 HL3]$ samtools view -F 4 /gpfs2/scratch/mmolla/HL3/calls_sorted.bam | wc -l
+0
+(base) [mmolla@dg-gpunode05 HL3]$
+
+(base) [mmolla@dg-gpunode05 HL3]$ samtools sort /gpfs2/scratch/mmolla/HL3/raligned.bam > /gpfs2/scratch/mmolla/HL3/calls_sorted.bam
+[bam_sort_core] merging from 8 files and 1 in-memory blocks...
+(base) [mmolla@dg-gpunode05 HL3]$ samtools sort /gpfs2/scratch/mmolla/HL3/raligned.bam > /gpfs2/scratch/mmolla/HL3/calls_sorted.bam
+
+
+(base) [mmolla@dg-gpunode05 HL3]$ samtools index /gpfs2/scratch/mmolla/HL3/calls_sorted.bam(base) 
+
+[mmolla@dg-gpunode05 HL3]$ modkit pileup /gpfs2/scratch/mmolla/HL3/calls_sorted.bam /gpfs2/scratch/mmolla/HL3/pileup.bed --log-filepath pileup.log
+
+> calculated chunk size: 6, interval size 100000, processing 600000 positions concurrently
+> attempting to sample 10042 reads
+> Using filter threshold 0.7246094 for C.
+
+[00:23:49] ####################################---- 743046470/848064373 genome positions
+> 43802256 rows written
+> 2383 ~records skipped
+> 750256 ~records processed
+[00:00:00] ########################################       6/6       chunk progress
+
+For more information, try '--help'.
+(base) [mmolla@dg-gpunode03 ~]$ modkit pileup /gpfs2/scratch/mmolla/HL3/calls_sorted.bam /gpfs2/scratch/mmolla/HL3/pileup.bed
+> calculated chunk size: 6, interval size 100000, processing 600000 positions concurrently
+> attempting to sample 10042 reads
+> Using filter threshold 0.7246094 for C.
+> Done, processed 50253308 rows.
+ Processed ~858444 reads and skipped
+~2778 reads.
+(base) [mmolla@dg-gpunode03 ~]$
+
+
+modkit pileup /gpfs2/scratch/mmolla/HL3/calls_sorted.bam /gpfs2/scratch/mmolla/HL3/pileup.bed  --cpg --ref /gpfs2/scratch/mmolla/Z/HL4.fsa
+
+(base) [mmolla@dg-gpunode03 ~]$ modkit pileup /gpfs2/scratch/mmolla/HL3/calls_sorted.bam /gpfs2/scratch/mmolla/HL3/pileup.bed  --cpg --ref /gpfs2/scratch/mmolla/Z/HL4.fsa
+> calculated chunk size: 6, interval size 100000, processing 600000 positions concurrently
+> filtering to only CpG motifs
+> attempting to sample 10042 reads
+> Using filter threshold 0.7246094 for C.
+> Done, processed 45975806 rows. Processed ~852850 reads and skipped ~724 reads.
+(base) [mmolla@dg-gpunode03 ~]$
+
+ modkit extract /gpfs2/scratch/mmolla/HL3/calls_sorted.bam /gpfs2/scratch/mmolla/HL3/modprobs.tsv
+> found BAM index, processing reads in 100000 base pair chunks
+> processed 851593 reads, 117430344 rows, skipped ~386952 reads, failed ~0 reads
+(base) [mmolla@dg-gpunode03 ~]$
+
+
+modkit pileup-hemi /gpfs2/scratch/mmolla/HL3/calls_sorted.bam 
+
+
+
+
+(base) [mmolla@dg-gpunode03 ~]$ modkit dmr pair --ref /gpfs2/scratch/mmolla/Z/HL4.fsa -a /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/hemi_duplex_pileup.bed -b /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed --base CG > /gpfs2/scratch/mmolla/Longread_1/BS1/result/dmr.bed
+
+
+
+modkit pileup ${norm} ${norm_pileup} \
+  --cpg \
+  --ref ${ref} \
+  --threads ${threads} \
+  --log-filepath log.txt
+
+FOR DMR
+
+ase) [mmolla@dg-gpunode03 ~]$ modkit pileup /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/duplex_sorted.bam /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed --cpg  --ref /gpfs2/scratch/mmolla/Z/HL4.fsa --threads 4 --log-filepath /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/log.txt
+
+> calculated chunk size: 6, interval size 100000, processing 600000 positions concurrently
+> filtering to only CpG motifs
+> attempting to sample 10042 reads
+> Using filter threshold 0.7597656 for C.
+> Done, processed 22783968 rows. Processed ~328225 reads and skipped ~106 reads.
+(base) [mmolla@dg-gpunode03 ~]$
+
+ls
+cd
+/gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/hemi_duplex_pileup.bed
+pwd
+cd b
+ls bgzip
+
+./bgzip -k /gpfs2/scratch/mmolla/Z/test.gtf
+
+cd htslib-1.20
+ls
+ls tabix
+./tabix -p /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed.gz
+
+or
+
+./tabix -p bed /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed.gz
+
+
+base) [mmolla@dg-gpunode01 ~]$ modkit pileup /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/duplex_sorted.bam /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed --cpg  --ref /gpfs2/scratch/mmolla/Z/HL4.fsa --threads 4 --log-filepath /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/log.txt
+
+
+modkit pileup /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/duplex_sorted.bam /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed --cpg  --ref /gpfs2/scratch/mmolla/Z/HL4.fsa --threads 4 --log-filepath /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/log.txt
+
+
+> calculated chunk size: 6, interval size 100000, processing 600000 positions concurrently
+> filtering to only CpG motifs
+> attempting to sample 10042 reads
+> Threshold of 0.6816406 for base C is low. Consider increasing the filter-percentile or specifying a higher threshold.
+> Done, processed 55403344 rows. Processed ~1254323 reads and skipped ~484 reads.
+(base) [mmolla@dg-gpunode01 ~]$
+
+
+Perform differential methylation scoring of genomic regions for a pair of samples..........................................................................
+
+modkit dmr pair -a /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/hemi_duplex_pileup.bed.gz --index-a /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/hemi_duplex_pileup.bed.gz.tbi -b /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed.gz --index-b /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed.gz.tbi -o /gpfs2/scratch/mmolla/Longread_1/LB1/result/ --ref /gpfs2/scratch/mmolla/Z/HL4.fsa --base C --threads 4 --log /gpfs2/scratch/mmolla/Longread_1/LB1/llog/dmr.log
+
+
+Testing#  (base) [mmolla@dg-gpunode01 htslib-1.20]$ modkit dmr pair -a /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/hemi_duplex_pileup.bed.gz --index-a /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/hemi_duplex_pileup.bed.gz.tbi -b /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed.gz --index-b /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed.gz.tbi -o /gpfs2/scratch/mmolla/Longread_1/LB1/result/ --ref /gpfs2/scratch/mmolla/Z/HL4.fsa --base C --threads 4 --log /gpfs2/scratch/mmolla/Longread_1/LB1/llog/dmr.log
+
+
+(base) [mmolla@dg-gpunode01 htslib-1.20]$ modkit dmr pair -a /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/hemi_duplex_pileup.bed.gz --index-a /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/hemi_duplex_pileup.bed.gz.tbi -b /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed.gz --index-b /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/hemi_duplex_pileup.bed.gz.tbi --ref /gpfs2/scratch/mmolla/Z/HL4.fsa --base C --threads 4 --log /gpfs2/scratch/mmolla/Longread_1/LB1/llog/dmr.log
+
+
+contig_1687     1413    1414    .       -0.4795730802618845     h:0,m:1 1       h:0,m:2 2       h:0.00,m:100.00 h:0.00,m:100.00    1       1       1       0
+contig_1687     1903    1904    .       -0.15246859364427312    h:0,m:1 1       h:0,m:2 3       h:0.00,m:100.00 h:0.00,m:66.67     1       0.6666667       1       0.33333333333333337
+(base) [mmolla@dg-gpunode01 htslib-1.20]$
+
+
+Find highly modified motif sequences............................................................
+
+modkit find-motifs -i /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/hemi_duplex_pileup.bed.gz.tbi -r /gpfs2/scratch/mmolla/Z/HL4.fsa -o /gpfs2/scratch/mmolla/Longread_1/LB1/result/./motifs.tsv  --threads 32  --log ./modkit_find_motifs_log.txt 
+
+
+
+"modkit find-motifs -i /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/hemi_duplex_pileup.bed -r /gpfs2/scratch/mmolla/Z/HL4.fsa -o /gpfs2/scratch/mmolla/Longread_1/LB1/result/motifs.tsv --threads 32 --log /gpfs2/scratch/mmolla/Longread_1/LB1/modkit_find_motifs_log.txt  xxxxxxxx
+
+modkit entropy --in-bam /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_B/duplex_sorted.bam -o /gpfs2/scratch/mmolla/Longread_1/LB1/result/ --ref /gpfs2/scratch/mmolla/Z/HL4.fsa --threads 32  --log /gpfs2/scratch/mmolla/Longread_1/LB1/entropy.log   xxxxxxxxxxxx
+
+
+Making a motif BED file...................................................................................................................
+
+modkit motif-bed /gpfs2/scratch/mmolla/Z/HL4.fsa CG 0 1> /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/cg_modifs.bed
+
+
+........................................................................................................................................................
+modkit entropy --in-bam /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/duplex_sorted.bam --cpg -o /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/entophy/entrophy.bed --ref /gpfs2/scratch/mmolla/Z/HL4.fsa --threads 32  --log /gpfs2/scratch/mmolla/Longread_1/LB1/LB1_A/entophy/entropy.log 
+......................................................................................
+
+
+
